@@ -3,9 +3,8 @@ package app;
 import java.util.Scanner;
 
 import model.Book;
-
 import repository.LibraryRepository;
-
+import repository.LoanRepository;
 import service.ImpLibraryServices;
 
 public class Main {
@@ -13,11 +12,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		LibraryRepository repository = new LibraryRepository();
-		ImpLibraryServices service = new ImpLibraryServices(repository);
+		
+		ImpLibraryServices service = new ImpLibraryServices(new LibraryRepository(), new LoanRepository());
 		
 		while(true){
-			System.out.println("\nO que deseja fazer?");
+			System.out.println("\n Olá, Você é professor ou estudante?");
 			System.out.println(
 					"1: Cadastrar Livro\n" +
 					"2: Remover Livro\n" +
