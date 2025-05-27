@@ -16,39 +16,19 @@ public class Main {
 		ImpLibraryServices service = new ImpLibraryServices(new LibraryRepository(), new LoanRepository());
 		
 		while(true){
-			System.out.println("\n Olá, Você é professor ou estudante?");
-			System.out.println(
-					"1: Cadastrar Livro\n" +
-					"2: Remover Livro\n" +
-					"3: Listar Livros\n" +
-					"4: Sair\n"
-					
-			);
+			System.out.println("\n Olá, Tem cadastro? (s/n)");
 			
-			int option = sc.nextInt();
+			String option = sc.next();
 			sc.nextLine();
 			
-			if(option == 1) {
-				System.out.print("Digite o nome do livro: ");
-				String nameBook = sc.nextLine();
-				
-				System.out.print("Digite o nome do autor: ");
-				String autorBook = sc.nextLine();
-				
-				Book book = new Book(nameBook, autorBook);
-				service.registerBook(book);
-				
+			if(option.toLowerCase() == "s") {
+				String name = sc.next();
+				String name = 
 			}
-			
-			if(option == 3) {
-				service.listAvailableBooks();
 				
-			}
-			
-			if(option == 4) {
-				break;
-			}
 		}
+			
+			
 		
 		sc.close();
 		

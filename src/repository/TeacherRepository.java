@@ -1,13 +1,13 @@
 package repository;
 
-import interfaces.IPerson;
+import interfaces.IPersonRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Teacher;
 
-public class TeacherRepository implements IPerson<Teacher> {
+public class TeacherRepository implements IPersonRepository<Teacher> {
 	List<Teacher> teachers = new ArrayList<>();
     
     public void add(Teacher teacher) {
